@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>投票</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
+    />
+  </head>
+  <body>
+    <div class="container px-4 py-5">
+      <img alt="ut.code();" src="./utc-logo.svg" style="max-width: 200px" />
+      <div class="content mt-4">
+        <p>
+          本日は「あなたのためのプログラミング」にお越しいただき、ありがとうございます。お楽しみいただけましたら、駒場グランプリの投票にご協力ください。
+        </p>
+        <p>投票は 2 ステップで完了します。</p>
+        <h2>1. LINE ログイン</h2>
+        <p>まずは駒場祭公式 LINE アカウントでログインしてください。</p>
+        <script>
+          const redirect_uri = "https://visitor.komabasai.net/73/visitor/prix";
+          const state = Math.random().toString(32).substring(2);
+          const url = `https://access.line.me/oauth2/v2.1/authorize?response_type=code&client_id=1657652005&redirect_uri=${redirect_uri}&state=${state}&scope=profile`;
+          document.write(
+            `<a href="${url}" class="button is-primary block">ログインする</a>`
+          );
+        </script>
+        <h2>2. 投票</h2>
+        <p>
+          ボタンをクリックした後、表示される「あなたのためのプログラミング」にご投票ください。
+        </p>
+        <a
+          class="button is-primary block"
+          href="https://visitor.komabasai.net/73/visitor/prix/vote?keyword=%E3%81%82%E3%81%AA%E3%81%9F%E3%81%AE%E3%81%9F%E3%82%81%E3%81%AE%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0%20ut.code%28%29%3B"
+        >
+          本企画に投票する
+        </a>
+        <p>ご来場ありがとうございました🙇</p>
+        <img style="max-width: 200px;" src="https://media.giphy.com/media/QwEihgVZ9E0IEHL2rf/giphy.gif" />
+      </div>
+    </div>
+  </body>
+</html>
